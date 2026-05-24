@@ -20,6 +20,8 @@
 
   <div class="container">
 
+    <!-- HERO -->
+
     <section class="hero">
 
       <div class="hero-icon">🍽</div>
@@ -39,11 +41,15 @@
 
     </section>
 
+    <!-- DIVIDER -->
+
     <div class="divider">
       <div class="divider-line"></div>
       <div class="divider-heart">❥</div>
       <div class="divider-line"></div>
     </div>
+
+    <!-- LOCATION -->
 
     <section class="section">
 
@@ -77,11 +83,15 @@
 
     </section>
 
+    <!-- DIVIDER -->
+
     <div class="divider">
       <div class="divider-line"></div>
       <div class="divider-heart">❥</div>
       <div class="divider-line"></div>
     </div>
+
+    <!-- MENU -->
 
     <section class="section">
 
@@ -103,11 +113,15 @@
 
     </section>
 
+    <!-- DIVIDER -->
+
     <div class="divider">
       <div class="divider-line"></div>
       <div class="divider-heart">❥</div>
       <div class="divider-line"></div>
     </div>
+
+    <!-- RSVP -->
 
     <section class="section">
 
@@ -122,6 +136,8 @@
       </div>
 
       <form id="rsvpForm">
+
+        <!-- ATTENDANCE -->
 
         <div class="form-group">
 
@@ -158,6 +174,8 @@
 
         </div>
 
+        <!-- PHONE -->
+
         <div class="form-group">
 
           <label>Telefon Numaranız</label>
@@ -174,96 +192,113 @@
 
         </div>
 
-        <div id="attendanceFields">
+        <!-- MEAL SECTION -->
 
         <div id="mealSection">
-          
-        <div id="guestContainer">
 
-          <div class="guest-card">
+          <!-- GUESTS -->
 
-            <div class="guest-title">
-              KATILIMCI 1
-            </div>
+          <div id="guestContainer">
 
-            <div class="form-group">
+            <!-- GUEST 1 -->
 
-              <label>Ad Soyad</label>
+            <div class="guest-card">
 
-              <input
-                type="text"
-                class="name-input"
-                name="guest_name_1"
-                autocomplete="off"
-                required
-              >
+              <div class="guest-title">
+                KATILIMCI 1
+              </div>
 
-            </div>
+              <div class="form-group">
 
-            <div class="form-group">
+                <label>Ad Soyad</label>
 
-              <label>Ana Yemek Tercihi</label>
+                <input
+                  type="text"
+                  class="name-input"
+                  name="guest_name_1"
+                  autocomplete="off"
+                  required
+                >
 
-              <select name="main_course_1" required>
+              </div>
 
-                <option value="">Seçiniz</option>
+              <div class="form-group">
 
-                <option>Kuzu Pirzola</option>
-                <option>Antrikot</option>
-                <option>Kuzu Şiş</option>
-                <option>Köfte</option>
-                <option>Levrek</option>
-                <option>Çipura</option>
-                <option>Tavuk Şiş</option>
-                <option>Tavuk Kanat</option>
-                <option>Hamburger</option>
+                <label>Ana Yemek Tercihi</label>
 
-              </select>
+                <select
+                  name="main_course_1"
+                  required
+                >
 
-            </div>
+                  <option value="">Seçiniz</option>
 
-            <div class="form-group">
+                  <option>Kuzu Pirzola</option>
+                  <option>Antrikot</option>
+                  <option>Kuzu Şiş</option>
+                  <option>Köfte</option>
+                  <option>Levrek</option>
+                  <option>Çipura</option>
+                  <option>Tavuk Şiş</option>
+                  <option>Tavuk Kanat</option>
+                  <option>Hamburger</option>
 
-              <label>Meze Tercihi</label>
+                </select>
 
-              <select name="mezze_1" required>
+              </div>
 
-                <option value="">Seçiniz</option>
+              <div class="form-group">
 
-                <option>Humus</option>
-                <option>Hibeş</option>
-                <option>Fava</option>
-                <option>Atom</option>
-                <option>Kabak Girit</option>
-                <option>Şakşuka</option>
-                <option>Köpoğlu</option>
-                <option>Pembe Sultan</option>
-                <option>Tulum Ceviz</option>
-                <option>Ezine</option>
-                <option>Avokado</option>
-                <option>Haydari</option>
-                <option>Kuru Cacık</option>
-                <option>Köz Patlıcan</option>
-                <option>Havuç Tarator</option>
-                <option>Muammara</option>
-                <option>Pancar</option>
-                <option>Patlıcan Mütebbel</option>
-                <option>Deniz Börülcesi</option>
+                <label>Meze Tercihi</label>
 
-              </select>
+                <select
+                  name="mezze_1"
+                  required
+                >
+
+                  <option value="">Seçiniz</option>
+
+                  <option>Humus</option>
+                  <option>Hibeş</option>
+                  <option>Fava</option>
+                  <option>Atom</option>
+                  <option>Kabak Girit</option>
+                  <option>Şakşuka</option>
+                  <option>Köpoğlu</option>
+                  <option>Pembe Sultan</option>
+                  <option>Tulum Ceviz</option>
+                  <option>Ezine</option>
+                  <option>Avokado</option>
+                  <option>Haydari</option>
+                  <option>Kuru Cacık</option>
+                  <option>Köz Patlıcan</option>
+                  <option>Havuç Tarator</option>
+                  <option>Muammara</option>
+                  <option>Pancar</option>
+                  <option>Patlıcan Mütebbel</option>
+                  <option>Deniz Börülcesi</option>
+
+                </select>
+
+              </div>
 
             </div>
 
           </div>
 
+          <!-- ADD GUEST -->
+
+          <button
+            type="button"
+            class="add-btn"
+            id="addGuestBtn"
+          >
+            + Katılımcı Ekle
+          </button>
+
         </div>
 
-        <button type="button" class="add-btn" id="addGuestBtn">
-
-       </div>
-          
-          + Katılımcı Ekle
-        </button>
+        <!-- NOTE -->
 
         <div class="form-group">
 
@@ -276,15 +311,20 @@
 
         </div>
 
-        <button class="submit-btn" type="submit">
+        <!-- SUBMIT -->
+
+        <button
+          class="submit-btn"
+          type="submit"
+        >
           KATILIM BİLGİSİNİ GÖNDER
         </button>
 
-          </div>
-        
       </form>
 
     </section>
+
+    <!-- FOOTER -->
 
     <div class="footer">
 
