@@ -6,9 +6,27 @@ cards.forEach(card => {
 
   card.addEventListener('click', () => {
 
-    cards.forEach(c => c.classList.remove('active'));
+    cards.forEach(c =>
+      c.classList.remove('active')
+    );
 
     card.classList.add('active');
+
+    const selectedValue =
+      card.querySelector('input').value;
+
+    const attendanceFields =
+      document.getElementById('attendanceFields');
+
+    if(selectedValue === 'Katılamıyorum'){
+
+      attendanceFields.style.display = 'none';
+
+    } else {
+
+      attendanceFields.style.display = 'block';
+
+    }
 
   });
 
