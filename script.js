@@ -172,3 +172,20 @@ function removeGuest(button){
   updateGuestTitles();
 
 }
+
+function updateGuestTitles(){
+
+  const guestCards =
+    document.querySelectorAll('.guest-card');
+
+  guestCards.forEach((card,index)=>{
+
+    const title =
+      card.querySelector('.guest-title');
+
+    title.innerText =
+      `KATILIMCI ${index + 1}`;
+
+  });
+
+}
