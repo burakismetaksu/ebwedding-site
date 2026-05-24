@@ -46,34 +46,40 @@ phoneInput.addEventListener('input', (e) => {
   // İlk karakter kontrolü
   if(value.length === 1){
 
+    // Sadece 0 veya 5 kabul
     if(value !== '0' && value !== '5'){
       value = '';
     }
 
-    // Kullanıcı 5 ile başladıysa
+    // 5 ile başladıysa otomatik 05 yap
     if(value === '5'){
       value = '05';
     }
 
   }
 
-  // 2 karakter olduysa
+  // İkinci karakter kontrolü
   if(value.length >= 2){
 
-    if(value.substring(0,2) !== '05'){
+    // İlk karakter 0 ise ikinci mutlaka 5 olmalı
+    if(
+      value.charAt(0) === '0' &&
+      value.charAt(1) !== '5'
+    ){
 
-      // Baştaki 0'ı koru
-      if(value.charAt(0) === '0'){
-
-        value = '05';
-
-      } else {
-
-        value = '05' + value.substring(1);
-
-      }
+      value = '0';
 
     }
+
+  }
+
+  // Baştan 5 ile başlayanları düzelt
+  if(
+    value.length >= 2 &&
+    value.charAt(0) === '5'
+  ){
+
+    value = '0' + value;
 
   }
 
