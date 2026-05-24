@@ -1,0 +1,429 @@
+/* style.css */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f7f4f2;
+  color:#1f1f1f;
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+
+.container{
+  width:100%;
+  max-width:560px;
+  margin:auto;
+  padding-bottom:80px;
+}
+
+/* HERO */
+
+.hero-cover{
+  min-height:100vh;
+  padding:50px 24px 60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at top,#ffffff 0%,#f7f4f2 60%);
+}
+
+.infinity-logo{
+  width:150px;
+  margin-bottom:28px;
+}
+
+.hero-top-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  letter-spacing:7px;
+  line-height:2;
+  margin-bottom:28px;
+}
+
+.mini-divider{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:36px;
+}
+
+.mini-divider span{
+  width:90px;
+  height:1px;
+  background:#e4a29c;
+}
+
+.mini-divider p{
+  color:#e4a29c;
+  font-size:20px;
+}
+
+.couple-names{
+  font-family:'Great Vibes',cursive;
+  font-size:92px;
+  line-height:1;
+  margin-bottom:40px;
+  color:#111;
+}
+
+.couple-names .ampersand{
+  color:#df8b85;
+  font-size:82px;
+}
+
+.calendar-wrapper{
+  width:100%;
+  max-width:420px;
+}
+
+.calendar-title{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:20px;
+}
+
+.calendar-title span{
+  width:90px;
+  height:1px;
+  background:#e4a29c;
+}
+
+.calendar-title h2{
+  font-family:'Cormorant Garamond',serif;
+  letter-spacing:10px;
+  font-size:38px;
+  font-weight:600;
+}
+
+.calendar-days,
+.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:14px;
+  text-align:center;
+}
+
+.calendar-days{
+  margin-bottom:18px;
+  font-size:14px;
+  letter-spacing:2px;
+}
+
+.calendar-grid div{
+  font-size:26px;
+  font-family:'Cormorant Garamond',serif;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.heart-date{
+  color:#df8b85;
+  font-weight:600;
+}
+
+.heart-date::before{
+  content:"♡";
+  position:absolute;
+  font-size:78px;
+  top:-20px;
+  color:#df8b85;
+  font-weight:300;
+}
+
+.countdown{
+  margin-top:48px;
+  background:white;
+  border-radius:28px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.countdown-title{
+  text-align:center;
+  font-size:13px;
+  letter-spacing:4px;
+  color:#df8b85;
+  margin-bottom:18px;
+  font-weight:600;
+}
+
+.countdown-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  text-align:center;
+}
+
+.count-box{
+  background:#faf7f5;
+  border-radius:18px;
+  padding:16px 10px;
+}
+
+.count-box h3{
+  font-size:28px;
+  margin-bottom:6px;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.count-box p{
+  font-size:12px;
+  color:#666;
+}
+
+/* GENERAL */
+
+.section{
+  background:white;
+  border-radius:30px;
+  padding:32px 24px;
+  margin:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.04);
+}
+
+.section-title{
+  text-align:center;
+  font-size:14px;
+  letter-spacing:4px;
+  color:#df8b85;
+  margin-bottom:24px;
+  font-weight:600;
+}
+
+.location-card{
+  background:#faf7f5;
+  border:1px solid #eee;
+  border-radius:24px;
+  padding:26px;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.location-icon{
+  font-size:28px;
+  margin-bottom:12px;
+}
+
+.location-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.location-address{
+  line-height:1.8;
+  color:#555;
+  margin-bottom:18px;
+}
+
+.location-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#fff;
+  border:1px solid #df8b85;
+  color:#df8b85;
+  padding:14px 20px;
+  border-radius:16px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.location-btn:hover{
+  background:#fff3f2;
+}
+
+.event-detail{
+  text-align:center;
+  margin-top:16px;
+  line-height:2;
+}
+
+.event-detail h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  margin-bottom:6px;
+}
+
+.menu-info{
+  text-align:center;
+  line-height:2;
+  color:#444;
+  font-size:15px;
+}
+
+/* FORM */
+
+.rsvp-title{
+  text-align:center;
+  line-height:1.8;
+  margin-bottom:28px;
+  color:#555;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  margin-bottom:10px;
+  font-size:14px;
+  font-weight:500;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  border:none;
+  background:#f3f3f3;
+  border-radius:16px;
+  padding:16px;
+  font-size:15px;
+  outline:none;
+  font-family:'Inter',sans-serif;
+}
+
+textarea{
+  min-height:120px;
+  resize:none;
+}
+
+.radio-group{
+  display:flex;
+  gap:12px;
+}
+
+.radio-card{
+  flex:1;
+  border:1px solid #ececec;
+  border-radius:18px;
+  padding:18px 12px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+  background:white;
+}
+
+.radio-card.active{
+  border-color:#df8b85;
+  background:#fff5f4;
+}
+
+.radio-card input{
+  display:none;
+}
+
+.guest-card{
+  border:1px solid #ececec;
+  padding:18px;
+  border-radius:20px;
+  margin-bottom:18px;
+  background:#fafafa;
+}
+
+.guest-title{
+  margin-bottom:16px;
+  color:#df8b85;
+  font-size:14px;
+  letter-spacing:2px;
+  font-weight:600;
+}
+
+.add-btn{
+  width:100%;
+  border:none;
+  background:#fff;
+  border:1px dashed #df8b85;
+  color:#df8b85;
+  padding:14px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.3s;
+  margin-bottom:22px;
+}
+
+.add-btn:hover{
+  background:#fff5f4;
+}
+
+.remove-btn{
+  width:100%;
+  margin-top:12px;
+  border:none;
+  background:#fff0ef;
+  color:#c96d66;
+  padding:12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.submit-btn{
+  width:100%;
+  border:none;
+  background:#df8b85;
+  color:white;
+  padding:18px;
+  border-radius:18px;
+  font-size:15px;
+  cursor:pointer;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.footer{
+  text-align:center;
+  padding:10px 24px 40px;
+  color:#888;
+  font-size:13px;
+  line-height:1.8;
+}
+
+@media(max-width:480px){
+
+  .couple-names{
+    font-size:68px;
+  }
+
+  .couple-names .ampersand{
+    font-size:58px;
+  }
+
+  .hero-top-text{
+    font-size:16px;
+    letter-spacing:5px;
+  }
+
+  .calendar-title h2{
+    font-size:28px;
+    letter-spacing:6px;
+  }
+
+  .calendar-grid div{
+    font-size:22px;
+  }
+
+  .countdown-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
