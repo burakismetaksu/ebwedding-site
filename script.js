@@ -162,3 +162,13 @@ document.getElementById('rsvpForm')
   alert('Katılım bilginiz alınmıştır ☺');
 
 });
+
+function removeGuest(button){
+
+  const guestCard = button.closest('.guest-card');
+
+  guestCard.remove();
+
+  updateGuestTitles();
+
+}
