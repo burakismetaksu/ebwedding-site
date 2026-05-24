@@ -1,15 +1,24 @@
-// script.js
+const targetDate = new Date('2026-06-23T15:30:00').getTime();
+
+setInterval(() => {
+
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById('days').innerText = days;
+  document.getElementById('hours').innerText = hours;
+  document.getElementById('minutes').innerText = minutes;
+  document.getElementById('seconds').innerText = seconds;
+
+}, 1000);
 
 
-// =========================
-// KATILIM DURUMU
-// =========================
-
-const cards =
-  document.querySelectorAll('.radio-card');
-
-const attendanceFields =
-  document.getElementById('attendanceFields');
+const cards = document.querySelectorAll('.radio-card');
 
 cards.forEach(card => {
 
@@ -24,14 +33,13 @@ cards.forEach(card => {
     const selectedValue =
       card.querySelector('input').value;
 
+    const mealSection =
+      document.getElementById('mealSection');
+
     if(selectedValue === 'Katılamıyorum'){
-
-      attendanceFields.style.display = 'none';
-
+      mealSection.style.display = 'none';
     } else {
-
-      attendanceFields.style.display = 'block';
-
+      mealSection.style.display = 'block';
     }
 
   });
@@ -39,71 +47,11 @@ cards.forEach(card => {
 });
 
 
-// =========================
-// GERİ SAYIM
-// =========================
-
-const weddingDate =
-  new Date('2026-06-23T15:30:00').getTime();
-
-function updateCountdown(){
-
-  const now = new Date().getTime();
-
-  const distance =
-    weddingDate - now;
-
-  const days =
-    Math.floor(distance / (1000 * 60 * 60 * 24));
-
-  const hours =
-    Math.floor(
-      (distance % (1000 * 60 * 60 * 24))
-      / (1000 * 60 * 60)
-    );
-
-  const minutes =
-    Math.floor(
-      (distance % (1000 * 60 * 60))
-      / (1000 * 60)
-    );
-
-  const seconds =
-    Math.floor(
-      (distance % (1000 * 60))
-      / 1000
-    );
-
-  document.getElementById('days').innerText =
-    days;
-
-  document.getElementById('hours').innerText =
-    hours;
-
-  document.getElementById('minutes').innerText =
-    minutes;
-
-  document.getElementById('seconds').innerText =
-    seconds;
-
-}
-
-setInterval(updateCountdown, 1000);
-
-updateCountdown();
-
-
-// =========================
-// TELEFON FORMAT
-// =========================
-
-const phoneInput =
-  document.getElementById('phone');
+const phoneInput = document.getElementById('phone');
 
 phoneInput.addEventListener('input', (e) => {
 
-  let value =
-    e.target.value.replace(/\D/g,'');
+  let value = e.target.value.replace(/\D/g, '');
 
   if(value.length === 1){
 
@@ -114,7 +62,6 @@ phoneInput.addEventListener('input', (e) => {
     if(value === '5'){
       value = '05';
     }
-
   }
 
   if(value.length >= 2){
@@ -125,16 +72,13 @@ phoneInput.addEventListener('input', (e) => {
     ){
       value = '0';
     }
-
   }
 
   if(
     value.length >= 2 &&
     value.charAt(0) === '5'
   ){
-
     value = '0' + value;
-
   }
 
   value = value.substring(0,11);
@@ -162,15 +106,8 @@ phoneInput.addEventListener('input', (e) => {
 });
 
 
-// =========================
-// KATILIMCI EKLE
-// =========================
-
-const addGuestBtn =
-  document.getElementById('addGuestBtn');
-
-const guestContainer =
-  document.getElementById('guestContainer');
+const addGuestBtn = document.getElementById('addGuestBtn');
+const guestContainer = document.getElementById('guestContainer');
 
 addGuestBtn.addEventListener('click', () => {
 
@@ -179,87 +116,45 @@ addGuestBtn.addEventListener('click', () => {
 
   const guestHTML = `
 
-  <div class="guest-card">
+    <div class="guest-card">
 
-    <div class="guest-title">
-      KATILIMCI ${guestCount}
-    </div>
+      <div class="guest-title">
+        KATILIMCI ${guestCount}
+      </div>
 
-    <div class="form-group">
+      <div class="form-group">
+        <label>Ad Soyad</label>
+        <input type="text" class="name-input" required>
+      </div>
 
-      <label>Ad Soyad</label>
+      <div class="form-group">
+        <label>Ana Yemek Tercihi</label>
 
-      <input
-        type="text"
-        class="name-input"
-        autocomplete="off"
-        required
-      >
+        <select required>
+          <option value="">Seçiniz</option>
+          <option>Kuzu Pirzola</option>
+          <option>Antrikot</option>
+          <option>Kuzu Şiş</option>
+          <option>Köfte</option>
+        </select>
+      </div>
 
-    </div>
+      <div class="form-group">
+        <label>Meze Tercihi</label>
 
-    <div class="form-group">
+        <select required>
+          <option value="">Seçiniz</option>
+          <option>Humus</option>
+          <option>Haydari</option>
+          <option>Şakşuka</option>
+        </select>
+      </div>
 
-      <label>Ana Yemek Tercihi</label>
-
-      <select required>
-
-        <option value="">Seçiniz</option>
-
-        <option>Kuzu Pirzola</option>
-        <option>Antrikot</option>
-        <option>Kuzu Şiş</option>
-        <option>Köfte</option>
-        <option>Levrek</option>
-        <option>Çipura</option>
-        <option>Tavuk Şiş</option>
-        <option>Tavuk Kanat</option>
-        <option>Hamburger</option>
-
-      </select>
-
-    </div>
-
-    <div class="form-group">
-
-      <label>Meze Tercihi</label>
-
-      <select required>
-
-        <option value="">Seçiniz</option>
-
-        <option>Humus</option>
-        <option>Hibeş</option>
-        <option>Fava</option>
-        <option>Atom</option>
-        <option>Kabak Girit</option>
-        <option>Şakşuka</option>
-        <option>Köpoğlu</option>
-        <option>Pembe Sultan</option>
-        <option>Tulum Ceviz</option>
-        <option>Ezine</option>
-        <option>Avokado</option>
-        <option>Haydari</option>
-        <option>Kuru Cacık</option>
-        <option>Köz Patlıcan</option>
-        <option>Havuç Tarator</option>
-        <option>Muammara</option>
-        <option>Pancar</option>
-        <option>Patlıcan Mütebbel</option>
-        <option>Deniz Börülcesi</option>
-
-      </select>
+      <button type="button" class="remove-btn">
+        Katılımcıyı Sil
+      </button>
 
     </div>
-
-    <button
-      type="button"
-      class="remove-btn"
-    >
-      Katılımcıyı Sil
-    </button>
-
-  </div>
 
   `;
 
@@ -268,8 +163,7 @@ addGuestBtn.addEventListener('click', () => {
     guestHTML
   );
 
-  const lastGuestCard =
-    guestContainer.lastElementChild;
+  const lastGuestCard = guestContainer.lastElementChild;
 
   const removeBtn =
     lastGuestCard.querySelector('.remove-btn');
@@ -277,7 +171,6 @@ addGuestBtn.addEventListener('click', () => {
   removeBtn.addEventListener('click', () => {
 
     lastGuestCard.remove();
-
     updateGuestTitles();
 
   });
@@ -286,10 +179,6 @@ addGuestBtn.addEventListener('click', () => {
 
 });
 
-
-// =========================
-// İSİM FORMAT
-// =========================
 
 function attachNameFormatter(){
 
@@ -326,10 +215,6 @@ function attachNameFormatter(){
 }
 
 
-// =========================
-// NUMARALARI GÜNCELLE
-// =========================
-
 function updateGuestTitles(){
 
   const guestCards =
@@ -347,12 +232,9 @@ function updateGuestTitles(){
 
 }
 
+
 attachNameFormatter();
 
-
-// =========================
-// FORM SUBMIT
-// =========================
 
 document
   .getElementById('rsvpForm')
