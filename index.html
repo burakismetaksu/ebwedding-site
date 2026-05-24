@@ -74,4 +74,230 @@
         <div>28</div>
         <div>29</div>
         <div>30</div>
+
+      </div>
+
+      <div class="countdown-wrapper">
+        <div class="countdown-title">
+          NİKAHA KALAN SÜRE
+        </div>
+
+        <div id="countdown">
+          <div>
+            <span id="days">0</span>
+            <small>Gün</small>
+          </div>
+
+          <div>
+            <span id="hours">0</span>
+            <small>Saat</small>
+          </div>
+
+          <div>
+            <span id="minutes">0</span>
+            <small>Dakika</small>
+          </div>
+
+          <div>
+            <span id="seconds">0</span>
+            <small>Saniye</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-card">
+
+        <div class="location-title">
+          📍 KONYAALTI BELEDİYESİ NİKAH SALONU
+        </div>
+
+        <div class="location-sub">
+          23 Haziran 2026 • Saat 15:30
+        </div>
+
+        <a
+          href="https://share.google/e4LXrSBf4N1kYrXta"
+          target="_blank"
+          class="map-btn"
+        >
+          Konuma Git
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <main class="content-wrapper">
+
+    <section class="info-card">
+
+      <h2>YEMEK DAVETİ</h2>
+
+      <p>
+        Nikah törenimizin ardından
+        Bohomi Garden’da birlikte olacağız.
+      </p>
+
+      <a
+        href="https://share.google/FiXKpSgAJFe3lU03b"
+        target="_blank"
+        class="map-btn"
+      >
+        Bohomi Garden Konumu
+      </a>
+
+    </section>
+
+
+    <section class="info-card">
+
+      <h2>MENÜ BİLGİLENDİRMESİ</h2>
+
+      <p>
+        Fiks menümüz kişi başı;
+        ana yemek, meze, salata ve
+        soft içeceklerden oluşmaktadır.
+      </p>
+
+      <p>
+        Menü kişi başı ücretimiz
+        1250 TL’dir.
+      </p>
+
+      <p>
+        Dilerseniz kendi içeceğinizi
+        yanınızda getirebilirsiniz.
+      </p>
+
+    </section>
+
+
+    <section class="info-card">
+
+      <h2>BİLGİ & ONAY</h2>
+
+      <p class="form-top-text">
+        Katılım durumunuzu
+        01 Haziran 2026’ya kadar
+        bildirmenizi rica ederiz ☺
+      </p>
+
+      <form id="rsvpForm">
+
+        <div class="form-group">
+
+          <label>Katılım Durumu</label>
+
+          <div class="radio-group">
+
+            <label class="radio-card active">
+              <input type="radio" name="attendance" value="Katılıyorum" checked>
+              Katılıyorum
+            </label>
+
+            <label class="radio-card">
+              <input type="radio" name="attendance" value="Katılamıyorum">
+              Katılamıyorum
+            </label>
+
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label>Telefon Numaranız</label>
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="05xx xxx xx xx"
+            required
+          >
+        </div>
+
+        <div id="mealSection">
+
+          <div id="guestContainer">
+
+            <div class="guest-card">
+
+              <div class="guest-title">
+                KATILIMCI 1
+              </div>
+
+              <div class="form-group">
+                <label>Ad Soyad</label>
+
+                <input
+                  type="text"
+                  class="name-input"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label>Ana Yemek Tercihi</label>
+
+                <select required>
+                  <option value="">Seçiniz</option>
+                  <option>Kuzu Pirzola</option>
+                  <option>Antrikot</option>
+                  <option>Kuzu Şiş</option>
+                  <option>Köfte</option>
+                  <option>Levrek</option>
+                  <option>Çipura</option>
+                  <option>Tavuk Şiş</option>
+                  <option>Tavuk Kanat</option>
+                  <option>Hamburger</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Meze Tercihi</label>
+
+                <select required>
+                  <option value="">Seçiniz</option>
+                  <option>Humus</option>
+                  <option>Haydari</option>
+                  <option>Şakşuka</option>
+                  <option>Atom</option>
+                </select>
+              </div>
+
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="add-btn"
+            id="addGuestBtn"
+          >
+            + Katılımcı Ekle
+          </button>
+
+        </div>
+
+        <div class="form-group">
+          <label>Notunuz</label>
+
+          <textarea placeholder="Bizimle paylaşmak istediğiniz bir not varsa yazabilirsiniz"></textarea>
+        </div>
+
+        <button class="submit-btn" type="submit">
+          KATILIM BİLGİSİNİ GÖNDER
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
