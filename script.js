@@ -59,6 +59,13 @@ addGuestBtn.addEventListener('click', () => {
   guestCount++;
 
   const guestHTML = `
+
+  <button
+  type="button"
+  class="remove-btn"
+>
+  Katılımcıyı Sil
+</button>
   
   <div class="guest-card">
 
