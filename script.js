@@ -6,40 +6,36 @@ cards.forEach(card => {
 
   card.addEventListener('click', () => {
 
-    cards.forEach(c =>
-      c.classList.remove('active')
-    );
+    cards.forEach(c => {
+      c.classList.remove('active');
+    });
 
     card.classList.add('active');
 
     const selectedValue =
       card.querySelector('input').value;
 
- const mealSection =
-  document.getElementById('mealSection');
+    const mealSection =
+      document.getElementById('mealSection');
 
-if(selectedValue === 'Katılamıyorum'){
+    if(selectedValue === 'Katılamıyorum'){
 
-  mealSection.style.display = 'none';
+      mealSection.style.display = 'none';
 
-} else {
+    } else {
 
-  mealSection.style.display = 'block';
+      mealSection.style.display = 'block';
 
-}
     }
 
   });
 
 });
 
-const phoneInput = document.getElementById('phone');
 
-phoneInput.addEventListener('input', (e) => {
+// TELEFON FORMAT
 
-  let value = e.target.value.replace(/\D/g, '');
-
- const phoneInput =
+const phoneInput =
   document.getElementById('phone');
 
 phoneInput.addEventListener('input', (e) => {
@@ -47,8 +43,44 @@ phoneInput.addEventListener('input', (e) => {
   let value =
     e.target.value.replace(/\D/g, '');
 
-  value = value.substring(0, 11);
+  // İlk karakter kontrolü
+  if(value.length === 1){
 
+    if(value !== '0' && value !== '5'){
+      value = '';
+    }
+
+    // Kullanıcı 5 ile başladıysa
+    if(value === '5'){
+      value = '05';
+    }
+
+  }
+
+  // 2 karakter olduysa
+  if(value.length >= 2){
+
+    if(value.substring(0,2) !== '05'){
+
+      // Baştaki 0'ı koru
+      if(value.charAt(0) === '0'){
+
+        value = '05';
+
+      } else {
+
+        value = '05' + value.substring(1);
+
+      }
+
+    }
+
+  }
+
+  // max 11 rakam
+  value = value.substring(0,11);
+
+  // FORMAT
   let formatted = '';
 
   if(value.length > 0){
@@ -71,29 +103,8 @@ phoneInput.addEventListener('input', (e) => {
 
 });
 
-  value = value.substring(0, 11);
 
-  let formatted = '';
-
-  if (value.length > 0) {
-    formatted += value.substring(0, 4);
-  }
-
-  if (value.length >= 5) {
-    formatted += ' ' + value.substring(4, 7);
-  }
-
-  if (value.length >= 8) {
-    formatted += ' ' + value.substring(7, 9);
-  }
-
-  if (value.length >= 10) {
-    formatted += ' ' + value.substring(9, 11);
-  }
-
-  e.target.value = formatted;
-
-});
+// KATILIMCI EKLE
 
 const addGuestBtn =
   document.getElementById('addGuestBtn');
@@ -103,9 +114,9 @@ const guestContainer =
 
 addGuestBtn.addEventListener('click', () => {
 
-const guestCount =
-  document.querySelectorAll('.guest-card').length + 1;
-  
+  const guestCount =
+    document.querySelectorAll('.guest-card').length + 1;
+
   const guestHTML = `
 
   <div class="guest-card">
@@ -222,7 +233,10 @@ const guestCount =
 
 });
 
-function attachNameFormatter() {
+
+// İSİM FORMAT
+
+function attachNameFormatter(){
 
   const nameInputs =
     document.querySelectorAll('.name-input');
@@ -232,19 +246,21 @@ function attachNameFormatter() {
     input.addEventListener('input', () => {
 
       let words =
-        input.value.toLocaleLowerCase('tr-TR')
+        input.value
+          .toLocaleLowerCase('tr-TR')
           .split(' ');
 
-      words =
-        words.map(word => {
+      words = words.map(word => {
 
-          if(word.length === 0) return '';
+        if(word.length === 0){
+          return '';
+        }
 
-          return word.charAt(0)
-            .toLocaleUpperCase('tr-TR')
-            + word.slice(1);
+        return word.charAt(0)
+          .toLocaleUpperCase('tr-TR')
+          + word.slice(1);
 
-        });
+      });
 
       input.value = words.join(' ');
 
@@ -254,7 +270,10 @@ function attachNameFormatter() {
 
 }
 
-function updateGuestTitles() {
+
+// KATILIMCI NUMARALARI
+
+function updateGuestTitles(){
 
   const guestCards =
     document.querySelectorAll('.guest-card');
@@ -271,7 +290,13 @@ function updateGuestTitles() {
 
 }
 
+
+// İLK INPUTLAR
+
 attachNameFormatter();
+
+
+// FORM SUBMIT
 
 document
   .getElementById('rsvpForm')
