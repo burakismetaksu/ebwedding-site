@@ -56,12 +56,11 @@ const addGuestBtn =
 const guestContainer =
   document.getElementById('guestContainer');
 
-let guestCount = 1;
-
 addGuestBtn.addEventListener('click', () => {
 
-  guestCount++;
-
+const guestCount =
+  document.querySelectorAll('.guest-card').length + 1;
+  
   const guestHTML = `
 
   <div class="guest-card">
