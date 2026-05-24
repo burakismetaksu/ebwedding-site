@@ -1,6 +1,15 @@
 // script.js
 
-const cards = document.querySelectorAll('.radio-card');
+
+// =========================
+// KATILIM DURUMU
+// =========================
+
+const cards =
+  document.querySelectorAll('.radio-card');
+
+const attendanceFields =
+  document.getElementById('attendanceFields');
 
 cards.forEach(card => {
 
@@ -15,16 +24,13 @@ cards.forEach(card => {
     const selectedValue =
       card.querySelector('input').value;
 
-    const mealSection =
-      document.getElementById('mealSection');
-
     if(selectedValue === 'Katılamıyorum'){
 
-      mealSection.style.display = 'none';
+      attendanceFields.style.display = 'none';
 
     } else {
 
-      mealSection.style.display = 'block';
+      attendanceFields.style.display = 'block';
 
     }
 
@@ -33,7 +39,63 @@ cards.forEach(card => {
 });
 
 
+// =========================
+// GERİ SAYIM
+// =========================
+
+const weddingDate =
+  new Date('2026-06-23T15:30:00').getTime();
+
+function updateCountdown(){
+
+  const now = new Date().getTime();
+
+  const distance =
+    weddingDate - now;
+
+  const days =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours =
+    Math.floor(
+      (distance % (1000 * 60 * 60 * 24))
+      / (1000 * 60 * 60)
+    );
+
+  const minutes =
+    Math.floor(
+      (distance % (1000 * 60 * 60))
+      / (1000 * 60)
+    );
+
+  const seconds =
+    Math.floor(
+      (distance % (1000 * 60))
+      / 1000
+    );
+
+  document.getElementById('days').innerText =
+    days;
+
+  document.getElementById('hours').innerText =
+    hours;
+
+  document.getElementById('minutes').innerText =
+    minutes;
+
+  document.getElementById('seconds').innerText =
+    seconds;
+
+}
+
+setInterval(updateCountdown, 1000);
+
+updateCountdown();
+
+
+// =========================
 // TELEFON FORMAT
+// =========================
 
 const phoneInput =
   document.getElementById('phone');
@@ -41,7 +103,7 @@ const phoneInput =
 phoneInput.addEventListener('input', (e) => {
 
   let value =
-    e.target.value.replace(/\D/g, '');
+    e.target.value.replace(/\D/g,'');
 
   if(value.length === 1){
 
@@ -70,7 +132,9 @@ phoneInput.addEventListener('input', (e) => {
     value.length >= 2 &&
     value.charAt(0) === '5'
   ){
+
     value = '0' + value;
+
   }
 
   value = value.substring(0,11);
@@ -98,7 +162,9 @@ phoneInput.addEventListener('input', (e) => {
 });
 
 
+// =========================
 // KATILIMCI EKLE
+// =========================
 
 const addGuestBtn =
   document.getElementById('addGuestBtn');
@@ -126,7 +192,6 @@ addGuestBtn.addEventListener('click', () => {
       <input
         type="text"
         class="name-input"
-        name="guest_name_${guestCount}"
         autocomplete="off"
         required
       >
@@ -137,10 +202,7 @@ addGuestBtn.addEventListener('click', () => {
 
       <label>Ana Yemek Tercihi</label>
 
-      <select
-        name="main_course_${guestCount}"
-        required
-      >
+      <select required>
 
         <option value="">Seçiniz</option>
 
@@ -162,10 +224,7 @@ addGuestBtn.addEventListener('click', () => {
 
       <label>Meze Tercihi</label>
 
-      <select
-        name="mezze_${guestCount}"
-        required
-      >
+      <select required>
 
         <option value="">Seçiniz</option>
 
@@ -228,7 +287,9 @@ addGuestBtn.addEventListener('click', () => {
 });
 
 
+// =========================
 // İSİM FORMAT
+// =========================
 
 function attachNameFormatter(){
 
@@ -265,7 +326,9 @@ function attachNameFormatter(){
 }
 
 
-// KATILIMCI NUMARALARI
+// =========================
+// NUMARALARI GÜNCELLE
+// =========================
 
 function updateGuestTitles(){
 
@@ -284,51 +347,12 @@ function updateGuestTitles(){
 
 }
 
-
-// COUNTDOWN
-
-const weddingDate =
-  new Date('2026-06-23T15:30:00').getTime();
-
-function updateCountdown(){
-
-  const now = new Date().getTime();
-
-  const distance = weddingDate - now;
-
-  const days =
-    Math.floor(distance / (1000 * 60 * 60 * 24));
-
-  const hours =
-    Math.floor((distance % (1000 * 60 * 60 * 24))
-    / (1000 * 60 * 60));
-
-  const minutes =
-    Math.floor((distance % (1000 * 60 * 60))
-    / (1000 * 60));
-
-  const seconds =
-    Math.floor((distance % (1000 * 60))
-    / 1000);
-
-  document.getElementById('days').innerText = days;
-  document.getElementById('hours').innerText = hours;
-  document.getElementById('minutes').innerText = minutes;
-  document.getElementById('seconds').innerText = seconds;
-
-}
-
-setInterval(updateCountdown,1000);
-
-updateCountdown();
-
-
-// İLK INPUTLAR
-
 attachNameFormatter();
 
 
+// =========================
 // FORM SUBMIT
+// =========================
 
 document
   .getElementById('rsvpForm')
