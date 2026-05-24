@@ -1,7 +1,7 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -12,304 +12,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
+  <link rel="stylesheet" href="style.css">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      background:#f8f6f4;
-      color:#1f1f1f;
-      font-family:'Inter',sans-serif;
-      overflow-x:hidden;
-    }
-
-    .container{
-      width:100%;
-      max-width:520px;
-      margin:auto;
-      padding:32px 22px 80px;
-    }
-
-    .hero{
-      text-align:center;
-      padding-top:40px;
-      animation:fadeUp 1s ease;
-    }
-
-    .hero-icon{
-      font-size:48px;
-      color:#df8b85;
-      margin-bottom:24px;
-    }
-
-    .hero-title{
-      font-family:'Cormorant Garamond',serif;
-      font-size:48px;
-      letter-spacing:2px;
-      line-height:1.05;
-      margin-bottom:12px;
-      font-weight:500;
-    }
-
-    .hero-script{
-      font-family:'Great Vibes',cursive;
-      color:#df8b85;
-      font-size:44px;
-      line-height:1.1;
-      font-weight:bold;
-      margin-bottom:10px;
-    }
-
-    .hero-sub{
-      font-family:'Great Vibes',cursive;
-      color:#df8b85;
-      font-size:38px;
-      line-height:1.1;
-      font-weight:bold;
-      margin-bottom:20px;
-    }
-
-    .divider{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      margin:34px 0;
-      color:#df8b85;
-    }
-
-    .divider-line{
-      width:90px;
-      height:1px;
-      background:#df8b85;
-    }
-
-    .divider-heart{
-      font-size:18px;
-    }
-
-    .section{
-      background:white;
-      border-radius:26px;
-      padding:32px 24px;
-      margin-bottom:22px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.04);
-      animation:fadeUp 1s ease;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:14px;
-      letter-spacing:4px;
-      color:#df8b85;
-      margin-bottom:20px;
-      font-weight:600;
-    }
-
-    .location-icon{
-      font-size:30px;
-      text-align:center;
-      margin-bottom:14px;
-    }
-
-    .location-name{
-      text-align:center;
-      font-size:28px;
-      font-family:'Cormorant Garamond',serif;
-      font-weight:600;
-      margin-bottom:12px;
-    }
-
-    .location-address{
-      text-align:center;
-      line-height:1.8;
-      font-size:15px;
-      color:#444;
-    }
-
-    .event-box{
-      text-align:center;
-      padding:18px;
-      border:1px solid #eee;
-      border-radius:18px;
-      margin-top:18px;
-      background:#fafafa;
-    }
-
-    .event-time{
-      font-size:13px;
-      letter-spacing:2px;
-      color:#df8b85;
-      margin-bottom:10px;
-      font-weight:600;
-    }
-
-    .event-name{
-      font-size:22px;
-      font-family:'Cormorant Garamond',serif;
-      margin-bottom:8px;
-      font-weight:600;
-    }
-
-    .event-desc{
-      color:#666;
-      font-size:14px;
-      line-height:1.7;
-    }
-
-    .menu-info{
-      text-align:center;
-      color:#444;
-      line-height:1.9;
-      font-size:15px;
-    }
-
-    .rsvp-title{
-      text-align:center;
-      font-size:15px;
-      line-height:1.8;
-      color:#444;
-      margin-bottom:30px;
-    }
-
-    .form-group{
-      margin-bottom:20px;
-    }
-
-    label{
-      display:block;
-      margin-bottom:10px;
-      font-size:14px;
-      font-weight:500;
-    }
-
-    input,
-    textarea,
-    select{
-      width:100%;
-      border:none;
-      background:#f3f3f3;
-      border-radius:14px;
-      padding:16px;
-      font-size:15px;
-      outline:none;
-      font-family:'Inter',sans-serif;
-    }
-
-    textarea{
-      min-height:120px;
-      resize:none;
-    }
-
-    .radio-group{
-      display:flex;
-      gap:12px;
-    }
-
-    .radio-card{
-      flex:1;
-      border:1px solid #ececec;
-      border-radius:16px;
-      padding:18px 12px;
-      text-align:center;
-      cursor:pointer;
-      transition:0.3s;
-      background:white;
-    }
-
-    .radio-card.active{
-      border-color:#df8b85;
-      background:#fff5f4;
-    }
-
-    .radio-card input{
-      display:none;
-    }
-
-    .guest-card{
-      border:1px solid #ececec;
-      padding:18px;
-      border-radius:18px;
-      margin-bottom:18px;
-      background:#fafafa;
-    }
-
-    .guest-title{
-      margin-bottom:16px;
-      color:#df8b85;
-      font-size:14px;
-      letter-spacing:2px;
-      font-weight:600;
-    }
-
-    .add-btn{
-      width:100%;
-      border:none;
-      background:#fff;
-      border:1px dashed #df8b85;
-      color:#df8b85;
-      padding:14px;
-      border-radius:14px;
-      cursor:pointer;
-      font-size:14px;
-      transition:0.3s;
-      margin-bottom:22px;
-    }
-
-    .add-btn:hover{
-      background:#fff5f4;
-    }
-
-    .submit-btn{
-      width:100%;
-      border:none;
-      background:#df8b85;
-      color:white;
-      padding:18px;
-      border-radius:18px;
-      font-size:15px;
-      cursor:pointer;
-      transition:0.3s;
-      font-weight:600;
-      letter-spacing:1px;
-    }
-
-    .submit-btn:hover{
-      opacity:0.9;
-    }
-
-    .footer{
-      text-align:center;
-      padding-top:10px;
-      color:#888;
-      font-size:13px;
-      line-height:1.8;
-    }
-
-    .heart-bottom{
-      text-align:center;
-      font-size:42px;
-      color:#df8b85;
-      margin-top:30px;
-      font-family:'Great Vibes',cursive;
-    }
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-  </style>
 </head>
 
 <body>
@@ -386,6 +90,7 @@
       </div>
 
       <div class="menu-info">
+
         Fiks menümüz kişi başı;<br>
         ana yemek, meze, salata ve<br>
         soft içeceklerden oluşmaktadır.<br><br>
@@ -393,6 +98,7 @@
         Etkinlik BYOB konseptindedir.<br>
         Dilerseniz kendi içeceğinizi<br>
         getirebilirsiniz.
+
       </div>
 
     </section>
@@ -424,13 +130,28 @@
           <div class="radio-group">
 
             <label class="radio-card active">
-              <input type="radio" name="attendance" value="Katılıyorum" checked>
+
+              <input
+                type="radio"
+                name="attendance"
+                value="Katılıyorum"
+                checked
+              >
+
               Katılıyorum
+
             </label>
 
             <label class="radio-card">
-              <input type="radio" name="attendance" value="Katılamıyorum">
+
+              <input
+                type="radio"
+                name="attendance"
+                value="Katılamıyorum"
+              >
+
               Katılamıyorum
+
             </label>
 
           </div>
@@ -438,15 +159,19 @@
         </div>
 
         <div class="form-group">
+
           <label>Telefon Numaranız</label>
 
           <input
             type="tel"
             id="phone"
+            name="phone"
             placeholder="05xx xxx xx xx"
             maxlength="15"
+            autocomplete="off"
             required
           >
+
         </div>
 
         <div id="guestContainer">
@@ -458,20 +183,27 @@
             </div>
 
             <div class="form-group">
+
               <label>Ad Soyad</label>
 
               <input
                 type="text"
                 class="name-input"
+                name="guest_name_1"
+                autocomplete="off"
                 required
               >
+
             </div>
 
             <div class="form-group">
+
               <label>Ana Yemek Tercihi</label>
 
-              <select required>
+              <select name="main_course_1" required>
+
                 <option value="">Seçiniz</option>
+
                 <option>Kuzu Pirzola</option>
                 <option>Antrikot</option>
                 <option>Kuzu Şiş</option>
@@ -481,15 +213,19 @@
                 <option>Tavuk Şiş</option>
                 <option>Tavuk Kanat</option>
                 <option>Hamburger</option>
+
               </select>
 
             </div>
 
             <div class="form-group">
+
               <label>Meze Tercihi</label>
 
-              <select required>
+              <select name="mezze_1" required>
+
                 <option value="">Seçiniz</option>
+
                 <option>Humus</option>
                 <option>Hibeş</option>
                 <option>Fava</option>
@@ -509,6 +245,7 @@
                 <option>Pancar</option>
                 <option>Patlıcan Mütebbel</option>
                 <option>Deniz Börülcesi</option>
+
               </select>
 
             </div>
@@ -522,9 +259,14 @@
         </button>
 
         <div class="form-group">
+
           <label>Notunuz</label>
 
-          <textarea placeholder="Eklemek istediğiniz bir not varsa yazabilirsiniz"></textarea>
+          <textarea
+            name="note"
+            placeholder="Bizimle paylaşmak istediğiniz bir not varsa yazabilirsiniz"
+          ></textarea>
+
         </div>
 
         <button class="submit-btn" type="submit">
@@ -550,164 +292,7 @@
 
   </div>
 
-  <script>
-
-    const cards = document.querySelectorAll('.radio-card');
-
-    cards.forEach(card => {
-
-      card.addEventListener('click', () => {
-
-        cards.forEach(c => c.classList.remove('active'));
-
-        card.classList.add('active');
-
-      });
-
-    });
-
-    const phoneInput = document.getElementById('phone');
-
-    phoneInput.addEventListener('input', (e) => {
-
-      let value = e.target.value.replace(/\D/g,'');
-
-      if(!value.startsWith('05')){
-        value = '05' + value.substring(2);
-      }
-
-      value = value.substring(0,11);
-
-      let formatted = '';
-
-      if(value.length > 0){
-        formatted += value.substring(0,4);
-      }
-
-      if(value.length >= 5){
-        formatted += ' ' + value.substring(4,7);
-      }
-
-      if(value.length >= 8){
-        formatted += ' ' + value.substring(7,9);
-      }
-
-      if(value.length >= 10){
-        formatted += ' ' + value.substring(9,11);
-      }
-
-      e.target.value = formatted;
-
-    });
-
-    const addGuestBtn = document.getElementById('addGuestBtn');
-
-    const guestContainer = document.getElementById('guestContainer');
-
-    let guestCount = 1;
-
-    addGuestBtn.addEventListener('click', () => {
-
-      guestCount++;
-
-      const guestHTML = `
-      
-      <div class="guest-card">
-
-        <div class="guest-title">
-          KATILIMCI ${guestCount}
-        </div>
-
-        <div class="form-group">
-          <label>Ad Soyad</label>
-
-          <input type="text" class="name-input" required>
-        </div>
-
-        <div class="form-group">
-          <label>Ana Yemek Tercihi</label>
-
-          <select required>
-            <option value="">Seçiniz</option>
-            <option>Kuzu Pirzola</option>
-            <option>Antrikot</option>
-            <option>Kuzu Şiş</option>
-            <option>Köfte</option>
-            <option>Levrek</option>
-            <option>Çipura</option>
-            <option>Tavuk Şiş</option>
-            <option>Tavuk Kanat</option>
-            <option>Hamburger</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Meze Tercihi</label>
-
-          <select required>
-            <option value="">Seçiniz</option>
-            <option>Humus</option>
-            <option>Hibeş</option>
-            <option>Fava</option>
-            <option>Atom</option>
-            <option>Kabak Girit</option>
-            <option>Şakşuka</option>
-            <option>Köpoğlu</option>
-            <option>Pembe Sultan</option>
-            <option>Tulum Ceviz</option>
-            <option>Ezine</option>
-            <option>Avokado</option>
-            <option>Haydari</option>
-            <option>Kuru Cacık</option>
-            <option>Köz Patlıcan</option>
-            <option>Havuç Tarator</option>
-            <option>Muammara</option>
-            <option>Pancar</option>
-            <option>Patlıcan Mütebbel</option>
-            <option>Deniz Börülcesi</option>
-          </select>
-        </div>
-
-      </div>
-      
-      `;
-
-      guestContainer.insertAdjacentHTML('beforeend', guestHTML);
-
-      attachNameFormatter();
-
-    });
-
-    function attachNameFormatter(){
-
-      const nameInputs = document.querySelectorAll('.name-input');
-
-      nameInputs.forEach(input => {
-
-        input.addEventListener('input', () => {
-
-          input.value = input.value
-            .toLowerCase()
-            .replace(/\b\w/g, l => l.toUpperCase());
-
-        });
-
-      });
-
-    }
-
-    attachNameFormatter();
-
-    document.getElementById('rsvpForm')
-      .addEventListener('submit', (e) => {
-
-      e.preventDefault();
-
-      alert('Katılım bilginiz alınmıştır ☺');
-
-    });
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
