@@ -117,7 +117,15 @@ addGuestBtn.addEventListener('click', () => {
     </div>
 
   </div>
-  
+
+  <button
+  type="button"
+  class="remove-btn"
+  onclick="removeGuest(this)"
+>
+  Katılımcıyı Sil
+</button>
+
   `;
 
   guestContainer.insertAdjacentHTML('beforeend', guestHTML);
