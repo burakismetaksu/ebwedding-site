@@ -294,3 +294,31 @@ textarea{
     transform:translateY(0);
   }
 }
+.remove-btn{
+
+  width:100%;
+  margin-top:12px;
+
+  border:none;
+
+  background:#fff0ef;
+
+  color:#c96d66;
+
+  padding:12px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  font-size:13px;
+
+  transition:0.3s;
+
+}
+
+.remove-btn:hover{
+
+  background:#ffe2df;
+
+}
