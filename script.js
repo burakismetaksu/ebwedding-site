@@ -15,17 +15,18 @@ cards.forEach(card => {
     const selectedValue =
       card.querySelector('input').value;
 
-    const attendanceFields =
-      document.getElementById('attendanceFields');
+ const mealSection =
+  document.getElementById('mealSection');
 
-    if(selectedValue === 'Katılamıyorum'){
+if(selectedValue === 'Katılamıyorum'){
 
-      attendanceFields.style.display = 'none';
+  mealSection.style.display = 'none';
 
-    } else {
+} else {
 
-      attendanceFields.style.display = 'block';
+  mealSection.style.display = 'block';
 
+}
     }
 
   });
@@ -38,11 +39,37 @@ phoneInput.addEventListener('input', (e) => {
 
   let value = e.target.value.replace(/\D/g, '');
 
-  if (!value.startsWith('05')) {
+ const phoneInput =
+  document.getElementById('phone');
 
-    value = '05' + value.substring(2);
+phoneInput.addEventListener('input', (e) => {
 
+  let value =
+    e.target.value.replace(/\D/g, '');
+
+  value = value.substring(0, 11);
+
+  let formatted = '';
+
+  if(value.length > 0){
+    formatted += value.substring(0,4);
   }
+
+  if(value.length >= 5){
+    formatted += ' ' + value.substring(4,7);
+  }
+
+  if(value.length >= 8){
+    formatted += ' ' + value.substring(7,9);
+  }
+
+  if(value.length >= 10){
+    formatted += ' ' + value.substring(9,11);
+  }
+
+  e.target.value = formatted;
+
+});
 
   value = value.substring(0, 11);
 
