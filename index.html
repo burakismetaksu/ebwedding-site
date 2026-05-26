@@ -2,35 +2,64 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f4f2" />
+  <meta name="description" content="Ece ve Burak’ın özel düğün davetiyesi. 23 Haziran 2026, Konyaaltı Belediyesi Nikah Salonu ve Bohomi Garden yemekte buluşuyoruz." />
+  <meta name="robots" content="index,follow" />
 
-  <title>Ece & Burak Wedding</title>
+  <title>Ece & Burak | Düğün Davetiyesi</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <meta property="og:title" content="Ece & Burak | Düğün Davetiyesi" />
+  <meta property="og:description" content="Ece ve Burak’ın özel düğün davetiyesi. 23 Haziran 2026, Konyaaltı Belediyesi Nikah Salonu ve Bohomi Garden yemekte buluşuyoruz." />
+  <meta property="og:image" content="assets/images/yuzuk_logo_transparent_hd.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ece & Burak | Düğün Davetiyesi" />
+  <meta name="twitter:description" content="Ece ve Burak’ın özel düğün davetiyesi. 23 Haziran 2026, Konyaaltı Belediyesi Nikah Salonu ve Bohomi Garden yemekte buluşuyoruz." />
+  <meta name="twitter:image" content="assets/images/yuzuk_logo_transparent_hd.png" />
 </head>
 
 <body>
+  <a href="#content" class="skip-link">Ana içeriğe atla</a>
 
-  <section class="hero-screen">
+  <header class="site-header" role="banner">
+    <nav aria-label="Site navigasyonu">
+      <ul class="nav-links">
+        <li><a class="nav-link active" href="#hero">Davetiye</a></li>
+        <li><a class="nav-link" href="#yemek">Yemek</a></li>
+        <li><a class="nav-link" href="#menu">Menü</a></li>
+        <li><a class="nav-link" href="#rsvp">RSVP</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="hero-inner">
+  <main id="content" class="content-wrapper">
+    <section id="hero" class="hero-screen" aria-labelledby="heroTitle">
+      <div class="hero-inner">
+        <img
+          src="assets/images/yuzuk_logo_transparent_hd.png"
+          class="hero-logo"
+          alt="Ece ve Burak düğün logosu"
+          width="180"
+          height="180"
+          decoding="async"
+          fetchpriority="high"
+        />
 
-      <img
-        src="assets/images/yuzuk_logo_transparent_hd.png"
-        class="hero-logo"
-        alt="Yüzük Logo"
-      >
-
-      <div class="hero-top-text">
-        EN ÖZEL ANIMIZA<br>
-        ŞAHİTLİK ETMENİZDEN<br>
-        MUTLULUK DUYARIZ
-      </div>
+        <h1 id="heroTitle" class="hero-title">
+          EN ÖZEL ANIMIZA<br>
+          ŞAHİTLİK ETMENİZDEN<br>
+          MUTLULUK DUYARIZ
+        </h1>
 
       <div class="mini-divider">
         <span></span>
@@ -118,7 +147,9 @@
         <a
           href="https://share.google/e4LXrSBf4N1kYrXta"
           target="_blank"
+          rel="noopener noreferrer"
           class="map-btn"
+          aria-label="Konyaaltı Belediyesi Nikah Salonu konumunu aç"
         >
           Konuma Git
         </a>
@@ -130,20 +161,18 @@
   </section>
 
 
-  <main class="content-wrapper">
+    <section id="yemek" class="info-card" aria-labelledby="yemekTitle">
 
-    <section class="info-card">
-
-      <h2>YEMEK DAVETİ</h2>
+      <h2 id="yemekTitle">YEMEK DAVETİ</h2>
 
       <p>
-        Nikah törenimizin ardından
-        Bohomi Garden’da birlikte olacağız.
+        Nikah törenimizin ardından Bohomi Garden’da birlikte olacağız.
       </p>
 
       <a
         href="https://share.google/FiXKpSgAJFe3lU03b"
         target="_blank"
+        rel="noopener noreferrer"
         class="map-btn"
       >
         Bohomi Garden Konumu
@@ -152,70 +181,62 @@
     </section>
 
 
-    <section class="info-card">
+    <section id="menu" class="info-card" aria-labelledby="menuTitle">
 
-      <h2>MENÜ BİLGİLENDİRMESİ</h2>
+      <h2 id="menuTitle">MENÜ BİLGİLENDİRMESİ</h2>
 
       <p>
-        Fiks menümüz kişi başı;
-        ana yemek, meze, salata ve
-        soft içeceklerden oluşmaktadır.
+        Fiks menümüz kişi başı; ana yemek, meze, salata ve soft içeceklerden oluşmaktadır.
       </p>
 
       <p>
-        Menü kişi başı ücretimiz
-        1250 TL’dir.
+        Menü kişi başı ücretimiz 1250 TL’dir.
       </p>
 
       <p>
-        Dilerseniz kendi alkolünüzü
-        yanınızda getirebilirsiniz.
+        Dilerseniz kendi alkolünüzü yanınızda getirebilirsiniz.
       </p>
 
     </section>
 
 
-    <section class="info-card">
+    <section id="rsvp" class="info-card" aria-labelledby="rsvpTitle">
 
-      <h2>BİLGİ & ONAY</h2>
+      <h2 id="rsvpTitle">BİLGİ & ONAY</h2>
 
       <p class="form-top-text">
-        Katılım durumunuzu
-        01 Haziran 2026’ya kadar
-        bildirmenizi rica ederiz ☺
+        Katılım durumunuzu 01 Haziran 2026’ya kadar bildirmenizi rica ederiz ☺
       </p>
 
-      <form id="rsvpForm">
+      <form id="rsvpForm" novalidate>
 
-        <div class="form-group">
-
-          <label>Katılım Durumu</label>
-
-          <div class="radio-group">
-
+        <fieldset class="form-group">
+          <legend>Katılım Durumu</legend>
+          <div class="radio-group" role="radiogroup" aria-label="Katılım durumu">
             <label class="radio-card active">
               <input type="radio" name="attendance" value="Katılıyorum" checked>
               Katılıyorum
             </label>
-
             <label class="radio-card">
               <input type="radio" name="attendance" value="Katılamıyorum">
               Katılamıyorum
             </label>
-
           </div>
-
-        </div>
+        </fieldset>
 
         <div class="form-group">
-          <label>Telefon Numaranız</label>
-
+          <label for="phone">Telefon Numaranız</label>
           <input
             type="tel"
             id="phone"
+            name="phone"
+            inputmode="tel"
+            autocomplete="tel"
             placeholder="05xx xxx xx xx"
             required
+            aria-describedby="phoneHelp"
           >
+          <small id="phoneHelp">Lütfen geçerli bir Türk cep telefonu numarası girin.</small>
         </div>
 
         <div id="mealSection">
@@ -229,19 +250,21 @@
               </div>
 
               <div class="form-group">
-                <label>Ad Soyad</label>
+                <label for="guestName1">Ad Soyad</label>
 
                 <input
                   type="text"
+                  id="guestName1"
                   class="name-input"
+                  name="guestName[]"
                   required
                 >
               </div>
 
               <div class="form-group">
-                <label>Ana Yemek Tercihi</label>
+                <label for="mealChoice1">Ana Yemek Tercihi</label>
 
-                <select required>
+                <select id="mealChoice1" name="mainCourse[]" required>
                   <option value="">Seçiniz</option>
                   <option>Kuzu Pirzola</option>
                   <option>Antrikot</option>
@@ -256,9 +279,9 @@
               </div>
 
               <div class="form-group">
-                <label>Meze Tercihi</label>
+                <label for="sideChoice1">Meze Tercihi</label>
 
-                <select required>
+                <select id="sideChoice1" name="sideDish[]" required>
                   <option value="">Seçiniz</option>
                   <option>Humus</option>
                   <option>Haydari</option>
@@ -275,6 +298,7 @@
             type="button"
             class="add-btn"
             id="addGuestBtn"
+            aria-live="polite"
           >
             + Katılımcı Ekle
           </button>
@@ -282,14 +306,23 @@
         </div>
 
         <div class="form-group">
-          <label>Notunuz</label>
+          <label for="note">Notunuz</label>
 
-          <textarea placeholder="Bizimle paylaşmak istediğiniz bir not varsa yazabilirsiniz"></textarea>
+          <textarea id="note" name="note" placeholder="Bizimle paylaşmak istediğiniz bir not varsa yazabilirsiniz"></textarea>
         </div>
 
-        <button class="submit-btn" type="submit">
-          KATILIM BİLGİSİNİ GÖNDER
-        </button>
+        <div class="form-footer">
+          <div class="visually-hidden">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" aria-hidden="true">
+          </div>
+
+          <div id="formStatus" class="form-status" aria-live="polite"></div>
+
+          <button class="submit-btn" type="submit" id="submitButton">
+            KATILIM BİLGİSİNİ GÖNDER
+          </button>
+        </div>
 
       </form>
 
@@ -297,7 +330,11 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <p>Ece & Burak • 23 Haziran 2026 • Konyaaltı</p>
+  </footer>
+
+  <script src="script.js" defer></script>
 
 </body>
 </html>
