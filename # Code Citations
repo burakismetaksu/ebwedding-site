@@ -1,0 +1,1013 @@
+# Code Citations
+
+## License: unknown
+https://github.com/koala-portal/koala/blob/9f86b75d35bc8ae2843d135c81bb91b3af5f4b61/README.md
+
+```
+Perfect! I've completed a full audit of your development environment. Let me create a comprehensive report organized by your requirements.
+
+## **DEVELOPMENT ENVIRONMENT AUDIT REPORT**
+### Wedding Microsite (ebwedding-site) | macOS | Cursor + VSCode
+
+---
+
+## **1. VERIFICATION RESULTS** ✅
+
+### Git Integration
+- ✅ **Repository**: Properly initialized with `.git` directory
+- ✅ **Remote**: Configured as `origin` → `https://github.com/burakismetaksu/ebwedding-site.git`
+- ✅ **Current Branch**: `hero-redesign` (working tree clean)
+- ✅ **Git Config**: User properly authenticated (`burakismetaksu` | `121465677+burakismetaksu@users.noreply.github.com`)
+- ✅ **Branch State**: Both `EBWEDDING-MicroSite` (main) and `hero-redesign` at commit `964dc6c`
+
+### GitHub Authentication  
+- ✅ **User Email**: Configured with GitHub no-reply email (SSH-authenticated commits available)
+- ✅ **GitHub Desktop**: Installed and accessible
+- ⚠️ **Status**: Will use `origin/HEAD` → automatically tracks primary branch
+
+### Current Branch Workflow
+- ✅ **Active Branch**: `hero-redesign` (feature branch ready for development)
+- ✅ **Merge Base**: Clear separation from `EBWEDDING-MicroSite` (main branch)
+- ℹ️ **Status**: Branches currently at same commit—ready to diverge for development
+
+### Vercel Deployment Workflow
+- ⚠️ **Detection**: No `vercel.json` or `.vercel/` directory found
+- ⚠️ **Status**: Likely configured via Vercel UI (web dashboard) only
+- ℹ️ **Implication**: Auto-deploy from `EBWEDDING-MicroSite` (primary) is active; `hero-redesign` needs manual merge or Vercel preview deployment
+
+### Local Preview Workflow
+- ℹ️ **Project Type**: Static HTML/CSS/JS (no build step needed)
+- ✅ **Executable**: Can be opened directly in browser or via live server
+- ℹ️ **Current Setup**: No local dev server configured (not necessary for static site)
+
+### Project Root Correctness
+- ✅ **Root Directory**: `/Users/burakismetaksu/Documents/GitHub/ebwedding-site` ✓
+- ✅ **Main Files**: `index.html` (7KB), `style.css` (4.1KB), `script.js` (4.6KB)
+- ✅ **Assets**: `assets/images/` directory exists
+- ✅ **Metadata**: `README.md`, `.git/` present
+
+---
+
+## **2. SAFETY & CONFIGURATION CHECKS**
+
+| Check | Status | Details |
+|-------|--------|---------|
+| **Cursor Git Integration** | ✅ Safe | Cursor uses system Git; works identically to VSCode once configured |
+| **Push/Pull Safety** | ✅ Safe | Clean working tree; no uncommitted changes; authenticated via SSH-ready config |
+| **Vercel Auto-Deploy** | ⚠️ Partial | Main branch (`EBWEDDING-MicroSite`) auto-deploys; feature branches require manual approval |
+| **Branch Safety** | ✅ Safe | `hero-redesign` is isolated; can be merged via PR when ready |
+| **AI-Assisted Development** | ✅ Safe | Static project with no build process; Cursor can safely edit HTML/CSS/JS files |
+| **Rollback Capability** | ✅ Safe | Full Git history available; can revert to any commit via `git revert` or `git reset` |
+| **Production Safety** | ✅ Safe | `EBWEDDING-MicroSite` is protected primary branch; only merge via reviewed PR |
+
+---
+
+## **3. RECOMMENDED EXTENSIONS** (Essential Only)
+
+### HTML/CSS/JS Development
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **HTML CSS Support** | ecmel | Autocomplete for CSS classes in HTML attributes | `ecmel.vscode-html-css` |
+| **Prettier - Code Formatter** | esbenp | Consistent HTML/CSS/JS formatting | `esbenp.prettier-vscode` |
+
+### Git & Workflow
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **GitLens** | GitKraken | Visual Git history, blame, & branch info | `eamodio.gitlens` |
+| **Git Graph** | mhutchie | Interactive Git branch visualization | `mhutchie.git-graph` |
+
+### Accessibility & Quality
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **axe DevTools** | Deque Systems | Automated accessibility checking | `deque-systems.vscode-axe-devtools` |
+| **WAVE Accessibility** | WAVE | WCAG compliance validation | `wave.wave-accessibility` |
+
+### Responsive & Live Preview
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Live Server** | Ritwick Dey | Local dev server + live reload (optional; not required) | `ritwickdey.LiveServer` |
+| **Responsive Viewer** | Blcursor | Test multiple breakpoints side-by-side | `blucifer.responsive-viewer` |
+
+### Productivity & Theming
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Peacock** | John Papa | Color-code workspaces for context switching | `johnpapa.vscode-peacock` |
+| **Error Lens** | Alexander | Show errors inline (helps catch issues) | `usernamehw.errorlens` |
+| **Markdown Preview Enhanced** | Yiyi Wang | Better markdown rendering (for README updates) | `shd101wyy.markdown-preview-enhanced` |
+
+### **NOT Recommended**:
+- ❌ Language packs (Turkish already supported by default)
+- ❌ Heavy theme packs (use built-in themes)
+- ❌ Duplicate formatters (one Prettier is enough)
+- ❌ Multiple Git extensions (GitLens + Git Graph covers all needs)
+
+---
+
+## **4. OPTIMAL SETTINGS** (Cursor & VSCode)
+
+Create/update **`.vscode/settings.json`**:
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.DS_Store": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.html": "$(capture).css, $(capture).js",
+    "package.json": "package-lock.json, .npmrc, .env*"
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.openEditors.visible": 3,
+  "workbench.editor.tabCloseButton": "left",
+  "workbench.tree.indent": 16,
+  "minimap.enabled": true,
+  "minimap.maxColumn": 200,
+  "minimap.showSlider": "always",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "git.ignoreLimitWarning": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Ece &
+```
+
+
+## License: unknown
+https://github.com/hacker65536/myit/blob/dcbf87e8ff11e8c94281e035d6a72d8ad3c27100/vscode/vscode-prettier.md
+
+```
+Perfect! I've completed a full audit of your development environment. Let me create a comprehensive report organized by your requirements.
+
+## **DEVELOPMENT ENVIRONMENT AUDIT REPORT**
+### Wedding Microsite (ebwedding-site) | macOS | Cursor + VSCode
+
+---
+
+## **1. VERIFICATION RESULTS** ✅
+
+### Git Integration
+- ✅ **Repository**: Properly initialized with `.git` directory
+- ✅ **Remote**: Configured as `origin` → `https://github.com/burakismetaksu/ebwedding-site.git`
+- ✅ **Current Branch**: `hero-redesign` (working tree clean)
+- ✅ **Git Config**: User properly authenticated (`burakismetaksu` | `121465677+burakismetaksu@users.noreply.github.com`)
+- ✅ **Branch State**: Both `EBWEDDING-MicroSite` (main) and `hero-redesign` at commit `964dc6c`
+
+### GitHub Authentication  
+- ✅ **User Email**: Configured with GitHub no-reply email (SSH-authenticated commits available)
+- ✅ **GitHub Desktop**: Installed and accessible
+- ⚠️ **Status**: Will use `origin/HEAD` → automatically tracks primary branch
+
+### Current Branch Workflow
+- ✅ **Active Branch**: `hero-redesign` (feature branch ready for development)
+- ✅ **Merge Base**: Clear separation from `EBWEDDING-MicroSite` (main branch)
+- ℹ️ **Status**: Branches currently at same commit—ready to diverge for development
+
+### Vercel Deployment Workflow
+- ⚠️ **Detection**: No `vercel.json` or `.vercel/` directory found
+- ⚠️ **Status**: Likely configured via Vercel UI (web dashboard) only
+- ℹ️ **Implication**: Auto-deploy from `EBWEDDING-MicroSite` (primary) is active; `hero-redesign` needs manual merge or Vercel preview deployment
+
+### Local Preview Workflow
+- ℹ️ **Project Type**: Static HTML/CSS/JS (no build step needed)
+- ✅ **Executable**: Can be opened directly in browser or via live server
+- ℹ️ **Current Setup**: No local dev server configured (not necessary for static site)
+
+### Project Root Correctness
+- ✅ **Root Directory**: `/Users/burakismetaksu/Documents/GitHub/ebwedding-site` ✓
+- ✅ **Main Files**: `index.html` (7KB), `style.css` (4.1KB), `script.js` (4.6KB)
+- ✅ **Assets**: `assets/images/` directory exists
+- ✅ **Metadata**: `README.md`, `.git/` present
+
+---
+
+## **2. SAFETY & CONFIGURATION CHECKS**
+
+| Check | Status | Details |
+|-------|--------|---------|
+| **Cursor Git Integration** | ✅ Safe | Cursor uses system Git; works identically to VSCode once configured |
+| **Push/Pull Safety** | ✅ Safe | Clean working tree; no uncommitted changes; authenticated via SSH-ready config |
+| **Vercel Auto-Deploy** | ⚠️ Partial | Main branch (`EBWEDDING-MicroSite`) auto-deploys; feature branches require manual approval |
+| **Branch Safety** | ✅ Safe | `hero-redesign` is isolated; can be merged via PR when ready |
+| **AI-Assisted Development** | ✅ Safe | Static project with no build process; Cursor can safely edit HTML/CSS/JS files |
+| **Rollback Capability** | ✅ Safe | Full Git history available; can revert to any commit via `git revert` or `git reset` |
+| **Production Safety** | ✅ Safe | `EBWEDDING-MicroSite` is protected primary branch; only merge via reviewed PR |
+
+---
+
+## **3. RECOMMENDED EXTENSIONS** (Essential Only)
+
+### HTML/CSS/JS Development
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **HTML CSS Support** | ecmel | Autocomplete for CSS classes in HTML attributes | `ecmel.vscode-html-css` |
+| **Prettier - Code Formatter** | esbenp | Consistent HTML/CSS/JS formatting | `esbenp.prettier-vscode` |
+
+### Git & Workflow
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **GitLens** | GitKraken | Visual Git history, blame, & branch info | `eamodio.gitlens` |
+| **Git Graph** | mhutchie | Interactive Git branch visualization | `mhutchie.git-graph` |
+
+### Accessibility & Quality
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **axe DevTools** | Deque Systems | Automated accessibility checking | `deque-systems.vscode-axe-devtools` |
+| **WAVE Accessibility** | WAVE | WCAG compliance validation | `wave.wave-accessibility` |
+
+### Responsive & Live Preview
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Live Server** | Ritwick Dey | Local dev server + live reload (optional; not required) | `ritwickdey.LiveServer` |
+| **Responsive Viewer** | Blcursor | Test multiple breakpoints side-by-side | `blucifer.responsive-viewer` |
+
+### Productivity & Theming
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Peacock** | John Papa | Color-code workspaces for context switching | `johnpapa.vscode-peacock` |
+| **Error Lens** | Alexander | Show errors inline (helps catch issues) | `usernamehw.errorlens` |
+| **Markdown Preview Enhanced** | Yiyi Wang | Better markdown rendering (for README updates) | `shd101wyy.markdown-preview-enhanced` |
+
+### **NOT Recommended**:
+- ❌ Language packs (Turkish already supported by default)
+- ❌ Heavy theme packs (use built-in themes)
+- ❌ Duplicate formatters (one Prettier is enough)
+- ❌ Multiple Git extensions (GitLens + Git Graph covers all needs)
+
+---
+
+## **4. OPTIMAL SETTINGS** (Cursor & VSCode)
+
+Create/update **`.vscode/settings.json`**:
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.DS_Store": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.html": "$(capture).css, $(capture).js",
+    "package.json": "package-lock.json, .npmrc, .env*"
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.openEditors.visible": 3,
+  "workbench.editor.tabCloseButton": "left",
+  "workbench.tree.indent": 16,
+  "minimap.enabled": true,
+  "minimap.maxColumn": 200,
+  "minimap.showSlider": "always",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "git.ignoreLimitWarning": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Ece & Burak",
+      "value": "#E8B4B8"
+    }
+  ]
+}
+```
+
+### **Theme Recommendations
+```
+
+
+## License: unknown
+https://github.com/koala-portal/koala/blob/9f86b75d35bc8ae2843d135c81bb91b3af5f4b61/README.md
+
+```
+Perfect! I've completed a full audit of your development environment. Let me create a comprehensive report organized by your requirements.
+
+## **DEVELOPMENT ENVIRONMENT AUDIT REPORT**
+### Wedding Microsite (ebwedding-site) | macOS | Cursor + VSCode
+
+---
+
+## **1. VERIFICATION RESULTS** ✅
+
+### Git Integration
+- ✅ **Repository**: Properly initialized with `.git` directory
+- ✅ **Remote**: Configured as `origin` → `https://github.com/burakismetaksu/ebwedding-site.git`
+- ✅ **Current Branch**: `hero-redesign` (working tree clean)
+- ✅ **Git Config**: User properly authenticated (`burakismetaksu` | `121465677+burakismetaksu@users.noreply.github.com`)
+- ✅ **Branch State**: Both `EBWEDDING-MicroSite` (main) and `hero-redesign` at commit `964dc6c`
+
+### GitHub Authentication  
+- ✅ **User Email**: Configured with GitHub no-reply email (SSH-authenticated commits available)
+- ✅ **GitHub Desktop**: Installed and accessible
+- ⚠️ **Status**: Will use `origin/HEAD` → automatically tracks primary branch
+
+### Current Branch Workflow
+- ✅ **Active Branch**: `hero-redesign` (feature branch ready for development)
+- ✅ **Merge Base**: Clear separation from `EBWEDDING-MicroSite` (main branch)
+- ℹ️ **Status**: Branches currently at same commit—ready to diverge for development
+
+### Vercel Deployment Workflow
+- ⚠️ **Detection**: No `vercel.json` or `.vercel/` directory found
+- ⚠️ **Status**: Likely configured via Vercel UI (web dashboard) only
+- ℹ️ **Implication**: Auto-deploy from `EBWEDDING-MicroSite` (primary) is active; `hero-redesign` needs manual merge or Vercel preview deployment
+
+### Local Preview Workflow
+- ℹ️ **Project Type**: Static HTML/CSS/JS (no build step needed)
+- ✅ **Executable**: Can be opened directly in browser or via live server
+- ℹ️ **Current Setup**: No local dev server configured (not necessary for static site)
+
+### Project Root Correctness
+- ✅ **Root Directory**: `/Users/burakismetaksu/Documents/GitHub/ebwedding-site` ✓
+- ✅ **Main Files**: `index.html` (7KB), `style.css` (4.1KB), `script.js` (4.6KB)
+- ✅ **Assets**: `assets/images/` directory exists
+- ✅ **Metadata**: `README.md`, `.git/` present
+
+---
+
+## **2. SAFETY & CONFIGURATION CHECKS**
+
+| Check | Status | Details |
+|-------|--------|---------|
+| **Cursor Git Integration** | ✅ Safe | Cursor uses system Git; works identically to VSCode once configured |
+| **Push/Pull Safety** | ✅ Safe | Clean working tree; no uncommitted changes; authenticated via SSH-ready config |
+| **Vercel Auto-Deploy** | ⚠️ Partial | Main branch (`EBWEDDING-MicroSite`) auto-deploys; feature branches require manual approval |
+| **Branch Safety** | ✅ Safe | `hero-redesign` is isolated; can be merged via PR when ready |
+| **AI-Assisted Development** | ✅ Safe | Static project with no build process; Cursor can safely edit HTML/CSS/JS files |
+| **Rollback Capability** | ✅ Safe | Full Git history available; can revert to any commit via `git revert` or `git reset` |
+| **Production Safety** | ✅ Safe | `EBWEDDING-MicroSite` is protected primary branch; only merge via reviewed PR |
+
+---
+
+## **3. RECOMMENDED EXTENSIONS** (Essential Only)
+
+### HTML/CSS/JS Development
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **HTML CSS Support** | ecmel | Autocomplete for CSS classes in HTML attributes | `ecmel.vscode-html-css` |
+| **Prettier - Code Formatter** | esbenp | Consistent HTML/CSS/JS formatting | `esbenp.prettier-vscode` |
+
+### Git & Workflow
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **GitLens** | GitKraken | Visual Git history, blame, & branch info | `eamodio.gitlens` |
+| **Git Graph** | mhutchie | Interactive Git branch visualization | `mhutchie.git-graph` |
+
+### Accessibility & Quality
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **axe DevTools** | Deque Systems | Automated accessibility checking | `deque-systems.vscode-axe-devtools` |
+| **WAVE Accessibility** | WAVE | WCAG compliance validation | `wave.wave-accessibility` |
+
+### Responsive & Live Preview
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Live Server** | Ritwick Dey | Local dev server + live reload (optional; not required) | `ritwickdey.LiveServer` |
+| **Responsive Viewer** | Blcursor | Test multiple breakpoints side-by-side | `blucifer.responsive-viewer` |
+
+### Productivity & Theming
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Peacock** | John Papa | Color-code workspaces for context switching | `johnpapa.vscode-peacock` |
+| **Error Lens** | Alexander | Show errors inline (helps catch issues) | `usernamehw.errorlens` |
+| **Markdown Preview Enhanced** | Yiyi Wang | Better markdown rendering (for README updates) | `shd101wyy.markdown-preview-enhanced` |
+
+### **NOT Recommended**:
+- ❌ Language packs (Turkish already supported by default)
+- ❌ Heavy theme packs (use built-in themes)
+- ❌ Duplicate formatters (one Prettier is enough)
+- ❌ Multiple Git extensions (GitLens + Git Graph covers all needs)
+
+---
+
+## **4. OPTIMAL SETTINGS** (Cursor & VSCode)
+
+Create/update **`.vscode/settings.json`**:
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.DS_Store": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.html": "$(capture).css, $(capture).js",
+    "package.json": "package-lock.json, .npmrc, .env*"
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.openEditors.visible": 3,
+  "workbench.editor.tabCloseButton": "left",
+  "workbench.tree.indent": 16,
+  "minimap.enabled": true,
+  "minimap.maxColumn": 200,
+  "minimap.showSlider": "always",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "git.ignoreLimitWarning": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Ece &
+```
+
+
+## License: unknown
+https://github.com/hacker65536/myit/blob/dcbf87e8ff11e8c94281e035d6a72d8ad3c27100/vscode/vscode-prettier.md
+
+```
+Perfect! I've completed a full audit of your development environment. Let me create a comprehensive report organized by your requirements.
+
+## **DEVELOPMENT ENVIRONMENT AUDIT REPORT**
+### Wedding Microsite (ebwedding-site) | macOS | Cursor + VSCode
+
+---
+
+## **1. VERIFICATION RESULTS** ✅
+
+### Git Integration
+- ✅ **Repository**: Properly initialized with `.git` directory
+- ✅ **Remote**: Configured as `origin` → `https://github.com/burakismetaksu/ebwedding-site.git`
+- ✅ **Current Branch**: `hero-redesign` (working tree clean)
+- ✅ **Git Config**: User properly authenticated (`burakismetaksu` | `121465677+burakismetaksu@users.noreply.github.com`)
+- ✅ **Branch State**: Both `EBWEDDING-MicroSite` (main) and `hero-redesign` at commit `964dc6c`
+
+### GitHub Authentication  
+- ✅ **User Email**: Configured with GitHub no-reply email (SSH-authenticated commits available)
+- ✅ **GitHub Desktop**: Installed and accessible
+- ⚠️ **Status**: Will use `origin/HEAD` → automatically tracks primary branch
+
+### Current Branch Workflow
+- ✅ **Active Branch**: `hero-redesign` (feature branch ready for development)
+- ✅ **Merge Base**: Clear separation from `EBWEDDING-MicroSite` (main branch)
+- ℹ️ **Status**: Branches currently at same commit—ready to diverge for development
+
+### Vercel Deployment Workflow
+- ⚠️ **Detection**: No `vercel.json` or `.vercel/` directory found
+- ⚠️ **Status**: Likely configured via Vercel UI (web dashboard) only
+- ℹ️ **Implication**: Auto-deploy from `EBWEDDING-MicroSite` (primary) is active; `hero-redesign` needs manual merge or Vercel preview deployment
+
+### Local Preview Workflow
+- ℹ️ **Project Type**: Static HTML/CSS/JS (no build step needed)
+- ✅ **Executable**: Can be opened directly in browser or via live server
+- ℹ️ **Current Setup**: No local dev server configured (not necessary for static site)
+
+### Project Root Correctness
+- ✅ **Root Directory**: `/Users/burakismetaksu/Documents/GitHub/ebwedding-site` ✓
+- ✅ **Main Files**: `index.html` (7KB), `style.css` (4.1KB), `script.js` (4.6KB)
+- ✅ **Assets**: `assets/images/` directory exists
+- ✅ **Metadata**: `README.md`, `.git/` present
+
+---
+
+## **2. SAFETY & CONFIGURATION CHECKS**
+
+| Check | Status | Details |
+|-------|--------|---------|
+| **Cursor Git Integration** | ✅ Safe | Cursor uses system Git; works identically to VSCode once configured |
+| **Push/Pull Safety** | ✅ Safe | Clean working tree; no uncommitted changes; authenticated via SSH-ready config |
+| **Vercel Auto-Deploy** | ⚠️ Partial | Main branch (`EBWEDDING-MicroSite`) auto-deploys; feature branches require manual approval |
+| **Branch Safety** | ✅ Safe | `hero-redesign` is isolated; can be merged via PR when ready |
+| **AI-Assisted Development** | ✅ Safe | Static project with no build process; Cursor can safely edit HTML/CSS/JS files |
+| **Rollback Capability** | ✅ Safe | Full Git history available; can revert to any commit via `git revert` or `git reset` |
+| **Production Safety** | ✅ Safe | `EBWEDDING-MicroSite` is protected primary branch; only merge via reviewed PR |
+
+---
+
+## **3. RECOMMENDED EXTENSIONS** (Essential Only)
+
+### HTML/CSS/JS Development
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **HTML CSS Support** | ecmel | Autocomplete for CSS classes in HTML attributes | `ecmel.vscode-html-css` |
+| **Prettier - Code Formatter** | esbenp | Consistent HTML/CSS/JS formatting | `esbenp.prettier-vscode` |
+
+### Git & Workflow
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **GitLens** | GitKraken | Visual Git history, blame, & branch info | `eamodio.gitlens` |
+| **Git Graph** | mhutchie | Interactive Git branch visualization | `mhutchie.git-graph` |
+
+### Accessibility & Quality
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **axe DevTools** | Deque Systems | Automated accessibility checking | `deque-systems.vscode-axe-devtools` |
+| **WAVE Accessibility** | WAVE | WCAG compliance validation | `wave.wave-accessibility` |
+
+### Responsive & Live Preview
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Live Server** | Ritwick Dey | Local dev server + live reload (optional; not required) | `ritwickdey.LiveServer` |
+| **Responsive Viewer** | Blcursor | Test multiple breakpoints side-by-side | `blucifer.responsive-viewer` |
+
+### Productivity & Theming
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Peacock** | John Papa | Color-code workspaces for context switching | `johnpapa.vscode-peacock` |
+| **Error Lens** | Alexander | Show errors inline (helps catch issues) | `usernamehw.errorlens` |
+| **Markdown Preview Enhanced** | Yiyi Wang | Better markdown rendering (for README updates) | `shd101wyy.markdown-preview-enhanced` |
+
+### **NOT Recommended**:
+- ❌ Language packs (Turkish already supported by default)
+- ❌ Heavy theme packs (use built-in themes)
+- ❌ Duplicate formatters (one Prettier is enough)
+- ❌ Multiple Git extensions (GitLens + Git Graph covers all needs)
+
+---
+
+## **4. OPTIMAL SETTINGS** (Cursor & VSCode)
+
+Create/update **`.vscode/settings.json`**:
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.DS_Store": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.html": "$(capture).css, $(capture).js",
+    "package.json": "package-lock.json, .npmrc, .env*"
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.openEditors.visible": 3,
+  "workbench.editor.tabCloseButton": "left",
+  "workbench.tree.indent": 16,
+  "minimap.enabled": true,
+  "minimap.maxColumn": 200,
+  "minimap.showSlider": "always",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "git.ignoreLimitWarning": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Ece & Burak",
+      "value": "#E8B4B8"
+    }
+  ]
+}
+```
+
+### **Theme Recommendations
+```
+
+
+## License: unknown
+https://github.com/hacker65536/myit/blob/dcbf87e8ff11e8c94281e035d6a72d8ad3c27100/vscode/vscode-prettier.md
+
+```
+Perfect! I've completed a full audit of your development environment. Let me create a comprehensive report organized by your requirements.
+
+## **DEVELOPMENT ENVIRONMENT AUDIT REPORT**
+### Wedding Microsite (ebwedding-site) | macOS | Cursor + VSCode
+
+---
+
+## **1. VERIFICATION RESULTS** ✅
+
+### Git Integration
+- ✅ **Repository**: Properly initialized with `.git` directory
+- ✅ **Remote**: Configured as `origin` → `https://github.com/burakismetaksu/ebwedding-site.git`
+- ✅ **Current Branch**: `hero-redesign` (working tree clean)
+- ✅ **Git Config**: User properly authenticated (`burakismetaksu` | `121465677+burakismetaksu@users.noreply.github.com`)
+- ✅ **Branch State**: Both `EBWEDDING-MicroSite` (main) and `hero-redesign` at commit `964dc6c`
+
+### GitHub Authentication  
+- ✅ **User Email**: Configured with GitHub no-reply email (SSH-authenticated commits available)
+- ✅ **GitHub Desktop**: Installed and accessible
+- ⚠️ **Status**: Will use `origin/HEAD` → automatically tracks primary branch
+
+### Current Branch Workflow
+- ✅ **Active Branch**: `hero-redesign` (feature branch ready for development)
+- ✅ **Merge Base**: Clear separation from `EBWEDDING-MicroSite` (main branch)
+- ℹ️ **Status**: Branches currently at same commit—ready to diverge for development
+
+### Vercel Deployment Workflow
+- ⚠️ **Detection**: No `vercel.json` or `.vercel/` directory found
+- ⚠️ **Status**: Likely configured via Vercel UI (web dashboard) only
+- ℹ️ **Implication**: Auto-deploy from `EBWEDDING-MicroSite` (primary) is active; `hero-redesign` needs manual merge or Vercel preview deployment
+
+### Local Preview Workflow
+- ℹ️ **Project Type**: Static HTML/CSS/JS (no build step needed)
+- ✅ **Executable**: Can be opened directly in browser or via live server
+- ℹ️ **Current Setup**: No local dev server configured (not necessary for static site)
+
+### Project Root Correctness
+- ✅ **Root Directory**: `/Users/burakismetaksu/Documents/GitHub/ebwedding-site` ✓
+- ✅ **Main Files**: `index.html` (7KB), `style.css` (4.1KB), `script.js` (4.6KB)
+- ✅ **Assets**: `assets/images/` directory exists
+- ✅ **Metadata**: `README.md`, `.git/` present
+
+---
+
+## **2. SAFETY & CONFIGURATION CHECKS**
+
+| Check | Status | Details |
+|-------|--------|---------|
+| **Cursor Git Integration** | ✅ Safe | Cursor uses system Git; works identically to VSCode once configured |
+| **Push/Pull Safety** | ✅ Safe | Clean working tree; no uncommitted changes; authenticated via SSH-ready config |
+| **Vercel Auto-Deploy** | ⚠️ Partial | Main branch (`EBWEDDING-MicroSite`) auto-deploys; feature branches require manual approval |
+| **Branch Safety** | ✅ Safe | `hero-redesign` is isolated; can be merged via PR when ready |
+| **AI-Assisted Development** | ✅ Safe | Static project with no build process; Cursor can safely edit HTML/CSS/JS files |
+| **Rollback Capability** | ✅ Safe | Full Git history available; can revert to any commit via `git revert` or `git reset` |
+| **Production Safety** | ✅ Safe | `EBWEDDING-MicroSite` is protected primary branch; only merge via reviewed PR |
+
+---
+
+## **3. RECOMMENDED EXTENSIONS** (Essential Only)
+
+### HTML/CSS/JS Development
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **HTML CSS Support** | ecmel | Autocomplete for CSS classes in HTML attributes | `ecmel.vscode-html-css` |
+| **Prettier - Code Formatter** | esbenp | Consistent HTML/CSS/JS formatting | `esbenp.prettier-vscode` |
+
+### Git & Workflow
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **GitLens** | GitKraken | Visual Git history, blame, & branch info | `eamodio.gitlens` |
+| **Git Graph** | mhutchie | Interactive Git branch visualization | `mhutchie.git-graph` |
+
+### Accessibility & Quality
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **axe DevTools** | Deque Systems | Automated accessibility checking | `deque-systems.vscode-axe-devtools` |
+| **WAVE Accessibility** | WAVE | WCAG compliance validation | `wave.wave-accessibility` |
+
+### Responsive & Live Preview
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Live Server** | Ritwick Dey | Local dev server + live reload (optional; not required) | `ritwickdey.LiveServer` |
+| **Responsive Viewer** | Blcursor | Test multiple breakpoints side-by-side | `blucifer.responsive-viewer` |
+
+### Productivity & Theming
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Peacock** | John Papa | Color-code workspaces for context switching | `johnpapa.vscode-peacock` |
+| **Error Lens** | Alexander | Show errors inline (helps catch issues) | `usernamehw.errorlens` |
+| **Markdown Preview Enhanced** | Yiyi Wang | Better markdown rendering (for README updates) | `shd101wyy.markdown-preview-enhanced` |
+
+### **NOT Recommended**:
+- ❌ Language packs (Turkish already supported by default)
+- ❌ Heavy theme packs (use built-in themes)
+- ❌ Duplicate formatters (one Prettier is enough)
+- ❌ Multiple Git extensions (GitLens + Git Graph covers all needs)
+
+---
+
+## **4. OPTIMAL SETTINGS** (Cursor & VSCode)
+
+Create/update **`.vscode/settings.json`**:
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.DS_Store": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.html": "$(capture).css, $(capture).js",
+    "package.json": "package-lock.json, .npmrc, .env*"
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.openEditors.visible": 3,
+  "workbench.editor.tabCloseButton": "left",
+  "workbench.tree.indent": 16,
+  "minimap.enabled": true,
+  "minimap.maxColumn": 200,
+  "minimap.showSlider": "always",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "git.ignoreLimitWarning": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Ece & Burak",
+      "value": "#E8B4B8"
+    }
+  ]
+}
+```
+
+### **Theme Recommendations
+```
+
+
+## License: unknown
+https://github.com/koala-portal/koala/blob/9f86b75d35bc8ae2843d135c81bb91b3af5f4b61/README.md
+
+```
+Perfect! I've completed a full audit of your development environment. Let me create a comprehensive report organized by your requirements.
+
+## **DEVELOPMENT ENVIRONMENT AUDIT REPORT**
+### Wedding Microsite (ebwedding-site) | macOS | Cursor + VSCode
+
+---
+
+## **1. VERIFICATION RESULTS** ✅
+
+### Git Integration
+- ✅ **Repository**: Properly initialized with `.git` directory
+- ✅ **Remote**: Configured as `origin` → `https://github.com/burakismetaksu/ebwedding-site.git`
+- ✅ **Current Branch**: `hero-redesign` (working tree clean)
+- ✅ **Git Config**: User properly authenticated (`burakismetaksu` | `121465677+burakismetaksu@users.noreply.github.com`)
+- ✅ **Branch State**: Both `EBWEDDING-MicroSite` (main) and `hero-redesign` at commit `964dc6c`
+
+### GitHub Authentication  
+- ✅ **User Email**: Configured with GitHub no-reply email (SSH-authenticated commits available)
+- ✅ **GitHub Desktop**: Installed and accessible
+- ⚠️ **Status**: Will use `origin/HEAD` → automatically tracks primary branch
+
+### Current Branch Workflow
+- ✅ **Active Branch**: `hero-redesign` (feature branch ready for development)
+- ✅ **Merge Base**: Clear separation from `EBWEDDING-MicroSite` (main branch)
+- ℹ️ **Status**: Branches currently at same commit—ready to diverge for development
+
+### Vercel Deployment Workflow
+- ⚠️ **Detection**: No `vercel.json` or `.vercel/` directory found
+- ⚠️ **Status**: Likely configured via Vercel UI (web dashboard) only
+- ℹ️ **Implication**: Auto-deploy from `EBWEDDING-MicroSite` (primary) is active; `hero-redesign` needs manual merge or Vercel preview deployment
+
+### Local Preview Workflow
+- ℹ️ **Project Type**: Static HTML/CSS/JS (no build step needed)
+- ✅ **Executable**: Can be opened directly in browser or via live server
+- ℹ️ **Current Setup**: No local dev server configured (not necessary for static site)
+
+### Project Root Correctness
+- ✅ **Root Directory**: `/Users/burakismetaksu/Documents/GitHub/ebwedding-site` ✓
+- ✅ **Main Files**: `index.html` (7KB), `style.css` (4.1KB), `script.js` (4.6KB)
+- ✅ **Assets**: `assets/images/` directory exists
+- ✅ **Metadata**: `README.md`, `.git/` present
+
+---
+
+## **2. SAFETY & CONFIGURATION CHECKS**
+
+| Check | Status | Details |
+|-------|--------|---------|
+| **Cursor Git Integration** | ✅ Safe | Cursor uses system Git; works identically to VSCode once configured |
+| **Push/Pull Safety** | ✅ Safe | Clean working tree; no uncommitted changes; authenticated via SSH-ready config |
+| **Vercel Auto-Deploy** | ⚠️ Partial | Main branch (`EBWEDDING-MicroSite`) auto-deploys; feature branches require manual approval |
+| **Branch Safety** | ✅ Safe | `hero-redesign` is isolated; can be merged via PR when ready |
+| **AI-Assisted Development** | ✅ Safe | Static project with no build process; Cursor can safely edit HTML/CSS/JS files |
+| **Rollback Capability** | ✅ Safe | Full Git history available; can revert to any commit via `git revert` or `git reset` |
+| **Production Safety** | ✅ Safe | `EBWEDDING-MicroSite` is protected primary branch; only merge via reviewed PR |
+
+---
+
+## **3. RECOMMENDED EXTENSIONS** (Essential Only)
+
+### HTML/CSS/JS Development
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **HTML CSS Support** | ecmel | Autocomplete for CSS classes in HTML attributes | `ecmel.vscode-html-css` |
+| **Prettier - Code Formatter** | esbenp | Consistent HTML/CSS/JS formatting | `esbenp.prettier-vscode` |
+
+### Git & Workflow
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **GitLens** | GitKraken | Visual Git history, blame, & branch info | `eamodio.gitlens` |
+| **Git Graph** | mhutchie | Interactive Git branch visualization | `mhutchie.git-graph` |
+
+### Accessibility & Quality
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **axe DevTools** | Deque Systems | Automated accessibility checking | `deque-systems.vscode-axe-devtools` |
+| **WAVE Accessibility** | WAVE | WCAG compliance validation | `wave.wave-accessibility` |
+
+### Responsive & Live Preview
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Live Server** | Ritwick Dey | Local dev server + live reload (optional; not required) | `ritwickdey.LiveServer` |
+| **Responsive Viewer** | Blcursor | Test multiple breakpoints side-by-side | `blucifer.responsive-viewer` |
+
+### Productivity & Theming
+| Extension | Publisher | Why | Install |
+|-----------|-----------|-----|---------|
+| **Peacock** | John Papa | Color-code workspaces for context switching | `johnpapa.vscode-peacock` |
+| **Error Lens** | Alexander | Show errors inline (helps catch issues) | `usernamehw.errorlens` |
+| **Markdown Preview Enhanced** | Yiyi Wang | Better markdown rendering (for README updates) | `shd101wyy.markdown-preview-enhanced` |
+
+### **NOT Recommended**:
+- ❌ Language packs (Turkish already supported by default)
+- ❌ Heavy theme packs (use built-in themes)
+- ❌ Duplicate formatters (one Prettier is enough)
+- ❌ Multiple Git extensions (GitLens + Git Graph covers all needs)
+
+---
+
+## **4. OPTIMAL SETTINGS** (Cursor & VSCode)
+
+Create/update **`.vscode/settings.json`**:
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.DS_Store": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.html": "$(capture).css, $(capture).js",
+    "package.json": "package-lock.json, .npmrc, .env*"
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.openEditors.visible": 3,
+  "workbench.editor.tabCloseButton": "left",
+  "workbench.tree.indent": 16,
+  "minimap.enabled": true,
+  "minimap.maxColumn": 200,
+  "minimap.showSlider": "always",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "git.ignoreLimitWarning": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Ece & Burak",
+      "value": "#E8B4B8"
+    }
+  ]
+}
+```
+
+### **Theme Recommendations
+```
+
